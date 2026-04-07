@@ -1,16 +1,33 @@
 # Ejercicio 12: Manipular lista de listas
 
 def list_of_lists(lista_de_listas):
-    """
-    Modifica una lista de 3 listas internas:
-    - Primera lista: solo los primeros 2 elementos
-    - Segunda lista: elementos entre el segundo y cuarto
-    - Tercera lista: solo los últimos 2 elementos
+    
+    lista1 = lista_de_listas[:][0]
+    lista2 = lista_de_listas[:][1]
+    lista3 = lista_de_listas[:][2]
 
-    Args:
-        lista_de_listas: Una lista que contiene 3 listas
+    if len(lista1) == 0:
+        lista11= []
+    elif len(lista1) == 1:
+        lista11 = lista1[:]
+    else:
+        lista11= lista1[:][0:2]
 
-    Returns:
-        La lista de listas modificada según las reglas
-    """
-    pass  # Reemplazar con tu implementación
+    if len(lista2) == 0 or len(lista2) == 1:
+        lista22 = []
+    elif len(lista2) == 2:
+        lista22 = lista2[:][1]
+    elif len(lista2) == 3:
+        lista22 = lista2[:][1:3]
+    else:
+        lista22 = lista2[:][1:4]
+
+    if len(lista3) == 0:
+        lista33 = []
+    elif len(lista3) == 1:
+        lista33 = lista3[:]
+    else:
+        lista33 = lista3[:][-2:]
+
+    total = [lista11, lista22, lista33]
+    return total
